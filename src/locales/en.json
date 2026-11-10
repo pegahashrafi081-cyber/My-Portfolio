@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "resume": "Download Resume",
+    "language": "English",
+    "name": "Pegah Ashrafi"
+  },
+  "hero": {
+    "hello": "Hello, I'm",
+    "name": "Pegah Ashrafi",
+    "title": "Frontend Developer",
+    "description": "I build modern and responsive web applications.",
+    "hireMe": "Hire Me"
+  },
+  "about": {
+    "heading": "About Me",
+    "body": "I'm a frontend developer with a passion for clean code."
+  }
+}

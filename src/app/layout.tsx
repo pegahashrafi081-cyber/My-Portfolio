@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Tajawal } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/provider/LanguageProvider";
+import { ThemeProvider } from "next-themes";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"], // پشتیبانی از زبان فارسی/عربی و انگلیسی
@@ -19,12 +21,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="fa" dir="ltr">
-      {/* اضافه کردن متغیر فونت به کلاس‌های بدنه صفحه */}
       <body className={`${tajawal.variable} font-sans antialiased`}>
-        {children}
+        <LanguageProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

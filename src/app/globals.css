@@ -12,3 +12,4 @@
     font-family: var(--font-sans);
   }
 }
+@custom-variant dark (&:where(.dark, .dark *));

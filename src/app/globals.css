@@ -13,3 +13,4 @@
   }
 }
 @custom-variant dark (&:where(.dark, .dark *));
+html { scroll-behavior: smooth; }

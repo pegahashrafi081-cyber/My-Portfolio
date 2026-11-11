@@ -2,7 +2,7 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
-import { useLanguage} from "@/provider/LanguageProvider";
+import { useLanguage } from "@/provider/LanguageProvider";
 
 interface Nav {
   name: string;
@@ -10,11 +10,11 @@ interface Nav {
   key: string;
 }
 const navItems: Nav[] = [
-  { name: "work", key: "nav.work", href: "#work" },
-  { name: "services", key: "nav.services", href: "#services" },
-  { name: "about", key: "nav.about", href: "#about" },
-  { name: "blog", key: "nav.blog", href: "#blog" },
-  { name: "contact", key: "nav.contact", href: "#contact" },
+  { name: "work", key: "nav.work", href: "#Work" },
+  { name: "services", key: "nav.services", href: "#Services" },
+  { name: "about", key: "nav.about", href: "#About" },
+  { name: "blog", key: "nav.blog", href: "#Blog" },
+  { name: "contact", key: "nav.contact", href: "#Contact" },
 ];
 const Navbar = () => {
   const { t, setLanguage, language } = useLanguage();
@@ -47,7 +47,7 @@ const Navbar = () => {
               >
                 {t(item.key)}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-orange-500 origin-left transition-transform duration-300 ease-out ${
+                  className={`absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-orange-500 origin-left transition-transform duration-300 ease-out ${
                     isActive
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"

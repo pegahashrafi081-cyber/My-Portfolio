@@ -12,11 +12,11 @@ export default function Home() {
       <main className="bg-[#fcfaf7] ">
         <Navbar />
         <Hero/>
-        {/* <Work/>
+        <Work/>
         <Services/>
         <About/>
         <Blog/>
-        <Contact/> */}
+        <Contact/>
       </main>
     </div>
   );

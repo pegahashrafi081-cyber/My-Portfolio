@@ -1,11 +1,15 @@
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import { ArrowUpRight, Calendar, ChevronDown, Download } from "lucide-react";
+import Image from "next/image";
 const Hero = () => {
   return (
-    <section>
-      <div className="flex justify-between w-full p-20">
+    <section className="relative min-h-screen bg-[#f3ede8] overflow-hidden">
+      <div className="pointer-events-none absolute -bottom-24 -left-24 w-[420px] h-[420px] rounded-full border border-orange-300/40" />
+      <div className="pointer-events-none absolute -bottom-10 left-10 w-[220px] h-[220px] rounded-full border border-orange-300/30" />
+
+      <div className="mx-auto max-w-7xl px-6 pt-16 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div className="flex items-center gap-2 p-3">
+          <div className="flex items-center gap-3 p-3 font-mono text-xs">
             <span className="relative flex size-3 items-center justify-center">
               {/*هاله پشتد */}
               <span className="absolute inline-flex size-3 animate-pulse rounded-full bg-emerald-400/40" />
@@ -16,25 +20,50 @@ const Hero = () => {
               Available for work
             </span>
           </div>
-          <h1>
-            <p>I build systems</p>
-            <p>people remember.</p>
+          <h1 className="mt-6 text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
+            <p className="text-neutral-900">I build systems</p>
+            <p className="text-orange-600">people remember.</p>
           </h1>
-          <p>Web · Mobile · AI · Product thinking</p>
-          <p>
+
+          <p className="mt-10 font-semibold text-neutral-900">
+            Web · Mobile · AI · Product thinking
+          </p>
+          <p className="mt-3 max-w-md text-neutral-600 leading-relaxed">
             Turning ideas into useful products with clean code, great design,
             and
           </p>
           <p>a focus on real impact.</p>
-          <div>
-            <button>Book a Call</button>
-            <button>View Projects</button>
-            <button>Download CV</button>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="#contact"
+              className="group flex items-center gap-2 rounded-full bg-orange-600 px-6 py-3 text-white font-semibold hover:bg-orange-700 transition"
+            >
+              Book a call <Calendar className="size-4" />
+              <span className="text-orange-300 group-hover:translate-x-0.5 transition">
+                ›
+              </span>
+            </a>
+            <a
+              href="#projects"
+              className="flex items-center gap-2 rounded-full bg-neutral-200/70 px-6 py-3 font-semibold hover:bg-neutral-300/70 transition"
+            >
+              View Projects <ArrowUpRight className="size-4" />
+            </a>
+            <a
+              href="/cv.pdf"
+              className="flex items-center gap-2 rounded-full bg-neutral-200/70 px-6 py-3 font-semibold hover:bg-neutral-300/70 transition"
+            >
+              Download CV <Download className="size-4" />
+            </a>
           </div>
-          <div className="flex items-center gap-1">
-            <span className="tracking-[0.25em]">Trusted by</span>
-            <span className=" w-10 h-px bg-neutral-300 mt-2"></span>
-            <div className="flex gap-5 ">
+
+          <div className="mt-10 flex items-center gap-4 text-neutral-400">
+            <span className="font-mono text-[10px] tracking-[0.25em] uppercase">
+              Trusted by
+            </span>
+            <span className="h-px w-10 bg-neutral-300"></span>
+            <div className="flex items-center gap-4 opacity-60">
               <img
                 src="/react-original.svg"
                 alt="REACT ICON"
@@ -60,12 +89,17 @@ const Hero = () => {
           </div>
         </div>
         {/* ---right  section--- */}
-        <div className="relative">
-          <img
-            src="f2YU5Sp.jpg"
-            alt="cover"
-            className="w-70 h-75 rounded-2xl"
-          />
+        <div className="relative justify-self-center lg:justify-self-end">
+          <div className="relative  rounded-3xl overflow-hidden shadow-xl bg-neutral-800">
+            {/* <img src="f2YU5Sp.jpg" alt="" className="object-cover" /> */}
+            <Image
+              src={"/f2YU5Sp.jpg"}
+              alt="portrait"
+              width={300}
+              height={300}
+              className="aspect-3/4"
+            />
+          </div>
           <div className="absolute -left-6 top-7 border rounded-2xl w-12 h-12 grid place-items-center bg-amber-50 shadow-lg animate-float ">
             <div className="text-orange-600 ">
               <svg

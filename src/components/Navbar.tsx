@@ -21,17 +21,24 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState("work");
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <header className="flex w-full justify-center p-4 ">
-      <nav className="bg-white flex border rounded-3xl text-center justify-between items-center  border-white gap-5 w-300 ">
-        <div className="p-3 gap-2 flex">
-          <span className="border rounded-2xl p-1 flex items-center ">P</span>
-          <div className="flex flex-col">
-            <span>{t("nav.name")}</span>
-            <span>Fronted DEVELOPER</span>
+    <header className="fixed mt-6 z-50 flex w-full justify-center px-4    ">
+      <nav className="flex items-center justify-between gap-6 rounded-full border border-neutral-200/80 bg-white/80 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all md:gap-10 ">
+        {/* Profile / Brand Info */}
+        <div className="flex items-center gap-3">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-sm font-semibold text-neutral-800 shadow-inner ">
+            P
+          </span>
+          <div className="hidden flex-col sm:flex">
+            <span className="text-xs font-bold tracking-tight text-neutral-900">
+              {t("nav.name")}
+            </span>
+            <span className="text-[10px] font-medium tracking-wider text-neutral-400 uppercase">
+              Fronted DEVELOPER
+            </span>
           </div>
         </div>
         {/* NavItems */}
-        <div className="flex gap-5 ">
+        <div className="flex items-center gap-1 sm:gap-2 ">
           {navItems.map((item) => {
             const isActive = activeItem === item.name;
             return (
@@ -58,16 +65,17 @@ const Navbar = () => {
           })}
         </div>
         {/* theme & lang */}
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="border rounded-md"
+            aria-label="Toggle Theme"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200/80 bg-neutral-50/50 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
           >
-            {isDarkMode ? <Sun /> : <Moon />}
+            {isDarkMode ? <Sun size={15} /> : <Moon size={15} />}
           </button>
           {/* lang */}
           <select
-            className="border rounded-md"
+            className="flex h-9 items-center gap-1 rounded-full border border-neutral-200/80 bg-neutral-50/50 px-2.5 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
             name="language"
             id="language"
             onChange={(event) => setLanguage(event.target.value as "fa" | "en")}
